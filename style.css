@@ -330,7 +330,7 @@ width: 60px ;
 height: 60px;
 }
 
-.card1 .social-link1,.card .social-link2,.card .social-link3,.card .social-link4 {
+.card1 .social-link1,.card1 .social-link2,.card1 .social-link3,.card1 .social-link4 {
 position: relative;
 display: flex;
 align-items: center;
