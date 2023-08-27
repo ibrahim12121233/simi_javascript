@@ -1,0 +1,416 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.loader {
+  --path: #2f3545;
+  --dot: #5628ee;
+  --duration: 3s;
+  width: 44px;
+  height: 44px;
+  position: relative;
+}
+
+.loader:before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  background: var(--dot);
+  top: 37px;
+  left: 19px;
+  transform: translate(-18px, -18px);
+  animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+.loader svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.loader svg rect, .loader svg polygon, .loader svg circle {
+  fill: none;
+  stroke: var(--path);
+  stroke-width: 10px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.loader svg polygon {
+  stroke-dasharray: 145 76 145 76;
+  stroke-dashoffset: 0;
+  animation: pathTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+.loader svg rect {
+  stroke-dasharray: 192 64 192 64;
+  stroke-dashoffset: 0;
+  animation: pathRect 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+.loader svg circle {
+  stroke-dasharray: 150 50 150 50;
+  stroke-dashoffset: 75;
+  animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+.loader.triangle {
+  width: 48px;
+}
+
+.loader.triangle:before {
+  left: 21px;
+  transform: translate(-10px, -18px);
+  animation: dotTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+@keyframes pathTriangle {
+  33% {
+    stroke-dashoffset: 74;
+  }
+
+  66% {
+    stroke-dashoffset: 147;
+  }
+
+  100% {
+    stroke-dashoffset: 221;
+  }
+}
+
+@keyframes dotTriangle {
+  33% {
+    transform: translate(0, 0);
+  }
+
+  66% {
+    transform: translate(10px, -18px);
+  }
+
+  100% {
+    transform: translate(-10px, -18px);
+  }
+}
+
+@keyframes pathRect {
+  25% {
+    stroke-dashoffset: 64;
+  }
+
+  50% {
+    stroke-dashoffset: 128;
+  }
+
+  75% {
+    stroke-dashoffset: 192;
+  }
+
+  100% {
+    stroke-dashoffset: 256;
+  }
+}
+
+@keyframes dotRect {
+  25% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(18px, -18px);
+  }
+
+  75% {
+    transform: translate(0, -36px);
+  }
+
+  100% {
+    transform: translate(-18px, -18px);
+  }
+}
+
+@keyframes pathCircle {
+  25% {
+    stroke-dashoffset: 125;
+  }
+
+  50% {
+    stroke-dashoffset: 175;
+  }
+
+  75% {
+    stroke-dashoffset: 225;
+  }
+
+  100% {
+    stroke-dashoffset: 275;
+  }
+}
+
+.loader {
+  display: inline-block;
+  margin: 0 16px;
+}
+
+ 
+
+
+
+header{
+
+  background-color: black;
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+  gap: 8%;
+  width:100%;
+  height: 14vh;
+
+
+}
+
+header nav{
+
+  width: 100%;
+  text-align: center;
+}
+nav a{
+
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+
+}
+nav a::before {
+    background-color: #fff;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    margin-right: 10px;
+    transition: all .42s cubic-bezier(.25,.8,.25,1);
+    width: 0;
+  }
+
+
+nav a:hover:before {
+  background-color: #fff;
+  width: 3rem;
+}
+
+main {
+  width: 100%;
+  height: 78vh;
+  border-top: 1px solid black;
+  display: flex;
+  gap: 3%;
+  justify-items: center;
+  margin-left: 5vw;
+} 
+.card{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  margin: 2% 0;
+  width:  calc(28%);
+  border-radius: 12px;
+  border: 1px solid black;
+  transition: 0.6s ease;
+  
+}
+
+.card:hover {
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.card img {
+  width: 100%;
+  height: 50vh;
+  border-radius: 12px;
+ 
+}
+
+.card button {
+  text-align: center;
+  color: white;
+  border: none;
+  width: 4vw;
+  height: 5vh;
+  background-color: rgb(0, 0, 128);
+  border-radius: 4px;
+  margin-bottom: 5%;
+}
+.card button:hover{
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+footer{
+width: 70%;
+padding: 100px 15%;
+background-color: #343334;
+color: white;
+display: flex;
+}
+
+footer div{
+text-align: center;
+}
+
+footer div h3{
+font-weight: 1000px;
+margin-bottom: 30px;
+letter-spacing: 1px;
+}
+
+.second{
+flex-grow: 2;
+}
+
+.first a{
+display: block;
+text-decoration: none;
+color: white;
+margin-bottom: 10px;
+}
+
+form input{
+width: 400px;
+height: 45px;
+border-radius: 4px;
+text-align: center;
+margin-top: 20px;
+margin-bottom: 40px;
+outline: none;
+border: none;
+}
+form input{
+width: 400px;
+height: 45px;
+border-radius: 4px;
+text-align: center;
+margin-top: 20px;
+margin-bottom: 40px;
+outline: none;
+border: none;
+}
+
+form button{
+background: transparent;
+border: 2px solid #ffffff;
+color: #ffffff;
+border-radius: 30px;
+padding: 10px 30px ;
+font-size: 15px;
+cursor: pointer;
+}
+
+.card1 {
+display: flex;
+height: 70px;
+width: 270px;
+}
+
+.card1 svg {
+position: absolute;
+display: flex;
+width: 60%;
+height: 100%;
+font-size: 24px;
+font-weight: 700;
+opacity: 1;
+transition: opacity 0.25s;
+z-index: 2;
+cursor: pointer;
+}
+
+.third img{
+width: 60px ;
+height: 60px;
+}
+
+.card1 .social-link1,.card .social-link2,.card .social-link3,.card .social-link4 {
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 25%;
+color: whitesmoke;
+font-size: 24px;
+text-decoration: none;
+transition: 0.25s;
+border-radius: 50px;
+}
+
+.card1 svg {
+transform: scale(1);
+}
+
+.card1 .social-link1:hover {
+background: #f09433;
+background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+animation: bounce_613 0.4s linear;
+}
+
+.card1 .social-link2:hover {
+background-color: #00ccff;
+animation: bounce_613 0.4s linear;
+}
+
+.card1 .social-link3:hover {
+background-color: #5865f2;
+animation: bounce_613 0.4s linear;
+}
+
+.card1 .social-link4:hover {
+background-color: #12a50b;
+animation: bounce_613 0.4s linear;
+}
+
+@keyframes bounce_613 {
+40% {
+transform: scale(1.4);
+}
+
+60% {
+transform: scale(0.8);
+}
+
+80% {
+transform: scale(1.2);
+}
+
+100% {
+transform: scale(1);
+}
+}
+
+.container{
+flex-direction: row;
+position: relative;
+width: 1500px;
+height: 400px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+margin-top:2%;
+margin-bottom: 20%;
+background-color: #5D8AA8;
+border-radius: 15px;
+gap: 110px;
+
+}
+.main-text h3{
+color: black;
+font-size: 50px ;
+text-align: center;
+margin-top: 400px;
+text-transform: capitalize;
+font-family: 'Rubik', sans-serif;
+font-weight: bolder;
+}  
